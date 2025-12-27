@@ -1,0 +1,46 @@
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: inherit;
+  padding: inherit;
+}
+
+header{
+    background-color: #2a2352;
+    width: 100%;
+    height: 4rem;
+    padding: 5px;
+    display: flex;
+    border-width: 0px;
+}
+
+#logo {
+    width: min(100px, 20%)
+}
+
+#title {
+    color: white;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: bold;
+    font-family: Rubik, sans-serif;
+    text-decoration: none;
+}
+
+@keyframes rotate-con {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+.burst {
+  position: fixed;
+  z-index: -1;
+  transform-origin: 50% 50%;
+  animation: 40s linear infinite rotate-con;
+}
+

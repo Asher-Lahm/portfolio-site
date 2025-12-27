@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57.41 38.55">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        font-size: 30px;
+        letter-spacing: -.09em;
+      }
+
+      .cls-2 {
+        font-family: CascadiaCode-Roman, 'Cascadia Code';
+        font-variation-settings: 'wght' 400;
+      }
+
+      .cls-3 {
+        font-family: Rubik-Medium, Rubik;
+        font-weight: 500;
+      }
+    </style>
+  </defs>
+  <g id="App_icon" data-name="App icon">
+    <text class="cls-1" transform="translate(0 25.5)"><tspan class="cls-2" x="0" y="0">•</tspan><tspan class="cls-3" x="14.79" y="0">,</tspan><tspan class="cls-2" x="19.92" y="0">⬠</tspan><tspan class="cls-3" x="34.71" y="0">,</tspan><tspan class="cls-2" x="39.84" y="0">•</tspan></text>
+  </g>
+</svg>
