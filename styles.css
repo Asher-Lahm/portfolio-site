@@ -6,17 +6,17 @@
   --backgroundColor: #1A1D33;
   --backgroundSecondaryColor: #253063;
   --headerColor: #2a2352;
-  --contentWidth: 70vw;
+  --contentWidth: 70dvw;
   /*
   --showcasePanelWidth: calc((var(--contentWidth) / 3) - 10px);
   */
   --showcasePanelWidth: var(--contentWidth);
-  --showcasePanelHeight: 70vh;
+  --showcasePanelHeight: 70dvh;
 }
 
 @media (max-width: 800px) {
   :root {
-    --contentWidth: calc(100vw - 20px);
+    --contentWidth: calc(100dvw - 20px);
     --showcasePanelWidth: var(--contentWidth);
   }
   nav {
@@ -61,8 +61,8 @@ body {
 .gradientBackground {
   position: fixed;
   z-index: -2;
-  height: 100vh;
-  width: 100vw;
+  height: 100dvh;
+  width: 100dvw;
   background: linear-gradient(180deg, var(--backgroundColor) 50%, var(--backgroundSecondaryColor) 90%);
 }
 
@@ -252,23 +252,23 @@ nav a:hover {
 }
 
 #burst1 {
-  left: calc(calc(100vw + 100vh) / -4);
-  bottom: calc(calc(100vw + 100vh) / -4);
-  width: calc(calc(100vw + 100vh) / 2);
+  left: calc(calc(100dvw + 100dvh) / -4);
+  bottom: calc(calc(100dvw + 100dvh) / -4);
+  width: calc(calc(100dvw + 100dvh) / 2);
   animation: rotateCW 150s linear infinite;
 }
 
 #burst2 {
-  right: calc(calc(150vw + 150vh) / -4);
-  bottom: calc(calc(150vw + 150vh) / -4);
-  width: calc(calc(150vw + 150vh) / 2);
+  right: calc(calc(150dvw + 150dvh) / -4);
+  bottom: calc(calc(150dvw + 150dvh) / -4);
+  width: calc(calc(150dvw + 150dvh) / 2);
   animation: rotateCCW 130s linear infinite;
 }
 
 #burst3 {
-  left: calc(calc(60vw + 60vh) / -4);
-  bottom: calc(30vw - calc(calc(60vw + 60vh) / 4));
-  width: calc(calc(60vw + 60vh) / 2);
+  left: calc(calc(60dvw + 60dvh) / -4);
+  bottom: calc(30dvw - calc(calc(60dvw + 60dvh) / 4));
+  width: calc(calc(60dvw + 60dvh) / 2);
   animation: rotateCCW 100s linear infinite;
 }
 
