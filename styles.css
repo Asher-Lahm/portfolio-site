@@ -16,7 +16,7 @@
 
 @media (max-width: 800px) {
   :root {
-    --contentWidth: calc(100dvw - 20px);
+    --contentWidth: calc(100% - 20px);
     --showcasePanelWidth: var(--contentWidth);
   }
   nav {
@@ -56,13 +56,14 @@ html {
 
 body {
   color: var(--textColor);
+  overflow-x: hidden;
 }
 
 .gradientBackground {
   position: fixed;
   z-index: -2;
-  height: 100dvh;
-  width: 100dvw;
+  height: 100%;
+  width: 100%;
   background: linear-gradient(180deg, var(--backgroundColor) 50%, var(--backgroundSecondaryColor) 90%);
 }
 
@@ -199,14 +200,15 @@ nav a:hover {
 
 .projectImages {
   max-height: calc(var(--showcasePanelHeight) - 100px);
-  object-fit: contain;
   border-radius: 10px;
   margin-bottom: 30px;
 }
 
 .projectImages img {
   display: block;
+  object-fit: contain;
   height: calc((var(--showcasePanelHeight) - 130px) / 2);
+  max-width: min(calc(var(--showcasePanelWidth) - 30px), 100%);
   border-radius: 10px;
 }
 
@@ -252,13 +254,15 @@ nav a:hover {
 }
 
 #burst1 {
-  left: calc(calc(100dvw + 100dvh) / -4);
-  bottom: calc(calc(100dvw + 100dvh) / -4);
-  width: calc(calc(100dvw + 100dvh) / 2);
+  will-change: left, bottom, transform;
+  left: calc(calc(100% + 100dvh) / -4);
+  bottom: calc(calc(100% + 100dvh) / -4);
+  width: calc(calc(100% + 100dvh) / 2);
   animation: rotateCW 150s linear infinite;
 }
 
 #burst2 {
+  will-change: left, bottom, transform;
   right: calc(calc(150dvw + 150dvh) / -4);
   bottom: calc(calc(150dvw + 150dvh) / -4);
   width: calc(calc(150dvw + 150dvh) / 2);
@@ -266,6 +270,7 @@ nav a:hover {
 }
 
 #burst3 {
+  will-change: left, bottom, transform;
   left: calc(calc(60dvw + 60dvh) / -4);
   bottom: calc(30dvw - calc(calc(60dvw + 60dvh) / 4));
   width: calc(calc(60dvw + 60dvh) / 2);
