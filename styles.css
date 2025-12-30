@@ -5,11 +5,12 @@
   --hoverColor: #b2e7f5;
   --backgroundColor: #1A1D33;
   --backgroundSecondaryColor: #253063;
-  --headerColor: #f12361;
+  --headerColor: #254099;
   --footerColor: #232044;
   --footerHeaderColor: #e0def5;
   --footerTextColor: #f7f6ff;
   --footerLinkColor: #df8ca1;
+  --bottomTextColor: #3a316e;
   --contentWidth: 70dvw;
   /*
   --showcasePanelWidth: calc((var(--contentWidth) / 3) - 10px);
@@ -35,6 +36,12 @@
   }
   .footerShapes {
     height:0px;
+    width: 0px;
+    visibility: hidden;
+  }
+
+  .contactInfo {
+    width: 80vw;
   }
 }
 
@@ -75,7 +82,13 @@ body {
 
 body p {
   margin-left: 6px;
-  font-size: clamp(13px, 2.5vw, 1.5rem)
+  font-size: clamp(13px, 2.5vw, 1.5rem);
+  margin-bottom: 5px;
+}
+
+.introText p {
+  font-size: clamp(13px, 3vw, 1.5rem);
+  margin-bottom: 5px;
 }
 
 .gradientBackground {
@@ -126,7 +139,7 @@ header {
 }
 
 .bigHeader {
-  font-size: clamp(10px, 9vw, 5rem);
+  font-size: clamp(10px, 9vw, 4rem);
   margin: calc(var(--bigMargin) + 10px) 5px var(--bigMargin) 5px;
 }
 
@@ -175,6 +188,7 @@ nav a:hover {
 
 #logo {
     width: clamp(50px, 20vw, 100px);
+    max-height: 50px;
 
 }
 
@@ -194,7 +208,7 @@ nav a:hover {
   width: var(--showcasePanelWidth)
 }
 
-.showcaseElementSmall {
+.showcaseElement {
   border: white;
   background-color: rgba(255, 255, 255, 0.15);
   width: var(--showcasePanelWidth);
@@ -205,7 +219,7 @@ nav a:hover {
   height: auto;
 }
 
-.showcaseElementSmall * {
+.showcaseElement * {
   padding: 0px;
   margin: 0px;
 }
@@ -239,6 +253,15 @@ nav a:hover {
   gap: var(--bigMargin);
 }
 
+.projectVideo {
+  width: clamp(0px, calc(100% - (2 * var(--bigMargin))), 100vh);
+  margin: auto;
+  object-fit: fill;
+  aspect-ratio: 16/9;
+  display: block;
+  border-radius: var(--borderCurve);
+}
+
 .projectDescription {
   padding: 0px 10px 10px 10px;
   font-size: 1.1rem;
@@ -249,12 +272,22 @@ nav a:hover {
   margin-bottom: 10px;
 }
 
+.projectDescription p:first-of-type {
+  margin-top: 10px;
+}
+
 .projectTitle {
   margin: 0px;
 }
 
+.bottomText {
+  margin: 30px auto;
+  color: var(--bottomTextColor);
+  font-size: clamp(13px, 2vw, 1.2rem);
+}
+
 .projectTitle a {
-  font-size: clamp(10px, 7vw, 4rem);
+  font-size: clamp(10px, 7vw, 3.2rem);
   margin: 10px 0px 10px 15px;
   display: inline-block;
   text-decoration: none;
@@ -306,6 +339,10 @@ footer a {
   margin: auto;
   text-align: left;
   display: inline-block;
+}
+
+.contactObject {
+  flex: 1 1;
 }
 
 .backgroundElements {
