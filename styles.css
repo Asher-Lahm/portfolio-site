@@ -6,6 +6,10 @@
   --backgroundColor: #1A1D33;
   --backgroundSecondaryColor: #253063;
   --headerColor: #f12361;
+  --footerColor: #232044;
+  --footerHeaderColor: #e0def5;
+  --footerTextColor: #f7f6ff;
+  --footerLinkColor: #df8ca1;
   --contentWidth: 70dvw;
   /*
   --showcasePanelWidth: calc((var(--contentWidth) / 3) - 10px);
@@ -28,6 +32,9 @@
   nav {
     visibility: hidden;
     width: 0;
+  }
+  .footerShapes {
+    height:0px;
   }
 }
 
@@ -193,7 +200,7 @@ nav a:hover {
   width: var(--showcasePanelWidth);
   border: white var(--borderWidth) solid;
   border-radius: var(--borderCurve);
-  margin: 0px;
+  margin: 0px auto;
   margin-bottom: var(--bigMargin);
   height: auto;
 }
@@ -261,31 +268,71 @@ nav a:hover {
   animation: 1s linear infinite colorPulse;
 }
 
+footer {
+  width: 100%;
+  margin-top: calc(7 * var(--bigMargin));
+  background: var(--footerColor);
+  padding: var(--bigMargin);
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footerShapes {
+  width: clamp(100px, 19vw, 200px);
+}
+
+footer * {
+  margin-top: 0px;
+  padding: 0px;
+}
+
+footer p {
+  color:var(--footerTextColor);
+  text-decoration: none;
+}
+
+footer a {
+  color: var(--footerLinkColor);
+}
+
+#contactHeader {
+  font-size: clamp(10px, 9vw, 5rem);
+  color: var(--footerHeaderColor);
+}
+
+.contactInfo {
+  margin: auto;
+  text-align: left;
+  display: inline-block;
+}
+
 .backgroundElements {
   inset: 0;
 }
 
 #burst1 {
   will-change: left, bottom, transform;
-  left: calc(calc(100% + 100dvh) / -4);
-  bottom: calc(calc(100% + 100dvh) / -4);
-  width: calc(calc(100% + 100dvh) / 2);
+  left: calc((130vw + 130dvh) / -4);
+  bottom: calc((130vw + 130dvh) / -4);
+  width: calc((130vw + 130dvh) / 2);
   animation: rotateCW 150s linear infinite;
 }
 
 #burst2 {
   will-change: left, bottom, transform;
-  right: calc(calc(150dvw + 150dvh) / -4);
-  bottom: calc(calc(150dvw + 150dvh) / -4);
-  width: calc(calc(150dvw + 150dvh) / 2);
+  right: calc((170vw + 170dvh) / -4);
+  bottom: calc((170vw + 170dvh) / -4);
+  width: calc((170vw + 170dvh) / 2);
   animation: rotateCCW 130s linear infinite;
 }
 
 #burst3 {
   will-change: left, bottom, transform;
-  left: calc(calc(60dvw + 60dvh) / -4);
-  bottom: calc(30dvw - calc(calc(60dvw + 60dvh) / 4));
-  width: calc(calc(60dvw + 60dvh) / 2);
+  left: calc((80vw + 80dvh) / -4);
+  top: calc(((80vw + 80dvh) / -4 + 60vh));
+  width: calc((80vw + 80dvh) / 2);
   animation: rotateCCW 100s linear infinite;
 }
 
