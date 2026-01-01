@@ -107,8 +107,8 @@ main {
 #headshot {
   display: block;
   width: calc(60% - 20px);
-  max-width: 400px;
-  margin: 30px auto;
+  max-width: 500px;
+  margin: calc(3 * var(--bigMargin)) auto 30px auto;
   border-radius: var(--borderCurve);
   border: #FFFFFF var(--borderWidth) solid;
   outline: rgb(58, 100, 214) var(--borderWidth) solid;
@@ -246,15 +246,17 @@ nav a:hover {
 
 .projectDetails {
   display: flex;
+  justify-content: center;
   width: calc(100% - 2 * var(--bigMargin));
   flex-direction: row;
   flex-wrap: wrap;
   margin: auto;
   gap: var(--bigMargin);
+  margin-bottom: var(--bigMargin);
 }
 
 .projectVideo {
-  width: clamp(0px, calc(100% - (2 * var(--bigMargin))), 100vh);
+  width: clamp(0px, calc(100% - (2 * var(--bigMargin))), 50vh);
   margin: auto;
   object-fit: fill;
   aspect-ratio: 16/9;
