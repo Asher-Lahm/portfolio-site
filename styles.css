@@ -186,11 +186,30 @@ nav a:hover {
   transform: scale(1.1);
   animation: 1s linear infinite colorPulse;
 }
+.logo {
+  position: relative;
+  width: clamp(50px, 20vw, 100px);
+  height: 35px;
+}
 
-#logo {
-    width: clamp(50px, 20vw, 100px);
-    max-height: 50px;
+.logo img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: clamp(50px, 20vw, 100px);
+  max-height: 50px;
+}
 
+#logo2 {
+  opacity: 0;
+}
+
+.logo:hover #logo1 {
+  opacity: 0;
+}
+
+.logo:hover #logo2 {
+  opacity: 1;
 }
 
 @keyframes colorPulse {
@@ -298,6 +317,9 @@ nav a:hover {
   transition: transform 200ms ease;
 }
 
+.warning {
+  color: #FF7070;
+}
 
 .projectTitle a:hover {
   transform: scale(1.05);
