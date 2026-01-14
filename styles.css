@@ -105,6 +105,18 @@ main {
   margin: auto;
 }
 
+canvas {
+  display: block;
+  margin: auto;
+  border-radius: var(--borderCurve);
+}
+
+#p5-container {
+  width: 100%;
+  height:90vh;
+  margin: auto;
+}
+
 #headshot {
   display: block;
   width: calc(60% - 20px);
@@ -142,6 +154,12 @@ header {
 .bigHeader {
   font-size: clamp(10px, 9vw, 4rem);
   margin: calc(var(--bigMargin) + 10px) 5px var(--bigMargin) 5px;
+}
+
+.bigProjectTitle {
+  font-size: clamp(10px, 9vw, 7rem);
+  margin: var(--bigMargin) auto 10px auto;
+  text-align: center;
 }
 
 header nav ul {
