@@ -11,6 +11,7 @@
   --footerTextColor: #f7f6ff;
   --footerLinkColor: #df8ca1;
   --bottomTextColor: #3a316e;
+  --backButtonColor: #f56;
   --contentWidth: 70dvw;
   /*
   --showcasePanelWidth: calc((var(--contentWidth) / 3) - 10px);
@@ -112,9 +113,37 @@ canvas {
 }
 
 #p5-container {
-  width: 100%;
-  height:90vh;
+  width: 90%;
+  height:70vh;
   margin: auto;
+}
+
+.projectPageShowcase {
+  border: white;
+  background-color: rgba(255, 255, 255, 0.25);
+  width: var(--showcasePanelWidth);
+  border: white var(--borderWidth) solid;
+  border-radius: var(--borderCurve);
+  margin: 0px auto;
+  margin-bottom: var(--bigMargin);
+  height: auto;
+}
+
+.projectPageDescription {
+  padding: 10px;
+}
+
+.backButton {
+  font-size: clamp(10px, 9vw, 2rem);
+  margin: var(--bigMargin) auto 10px auto;
+  text-align: center;
+  color: white;
+  padding: 20px 40px;
+  border-radius: var(--borderCurve);
+  background-color: var(--backButtonColor);
+  border-width: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-left: 10px;
 }
 
 #headshot {
@@ -423,6 +452,8 @@ footer a {
   pointer-events: none;
   overflow: hidden;
 }
+
+
 
 @keyframes rotateCW {
     from {transform: rotate(0deg);}

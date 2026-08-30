@@ -15,10 +15,17 @@ let menuMargin = 0;
 let buttonSize = 0;
 let scrollButtonAmount = 0;
 let menuButtonSize = 0;
+let windowSizeX = 0;
+let windowSizeY = 0;
+let instructionTextPos = 0;
+let friendWidthMult = 0;
+let friendLocX = 0;
+let friendLocY = 0;
+let minDimension = 0;
 
 
 function preload() {
-  imaginaryGadgets = loadSound("imaginaryGadgets.mp3");
+  //imaginaryGadgets = loadSound("imaginaryGadgets.mp3");
 }
 
 //A class that holds multiple 2d arrays, where the indices align with each grid space in a pattern and the values align with the functions stored in the "array" field. The gap is the gap between each grid space. Frequency and amplitude fields control the strength and speed of the waves of each pattern.
@@ -81,25 +88,22 @@ class Pattern {
 
 //A class that holds an array of patterns along with its position and size. It has two methods, one for drawing itself and one for drawing a simplified version of itself.
 class Friend {
-  constructor(x, y, size, patterns) {
-    this.x = x;
-    this.y = y;
-    this.size = size;
+  constructor(patterns) {
     this.patterns = patterns;
   }
-  drawFriend() {
+  drawFriend(x, y, size) {
     push();
-    translate(this.x, this.y);
-    scale(this.size);
+    translate(x, y);
+    scale(size);
     for (let i = 0; i < this.patterns.length; i++) {
       this.patterns[i].drawPattern();
     }
     pop();
   }
-  drawFriendSimple() {
+  drawFriendSimple(x, y, size) {
     push();
-    translate(this.x, this.y);
-    scale(0.25);
+    translate(x, y);
+    scale(size * 0.25);
     fill(90);
     noStroke();
     for (let i = 0; i < this.patterns.length; i++) {
@@ -745,7 +749,7 @@ function generateFriend() {
   let backPatternAmount = int(random(7, 12));
   for (let i = 0; i < backPatternAmount; i++) {
     let randomBackgroundType = int(random(0, 100));
-    let randomBackgroundSize = int(random(100, 600));
+    let randomBackgroundSize = int(random(100, 500));
     let randomColor = int(random(2, colorList.length));
     let randomBGmove = int(random(0, 70));
     let randomBGsame = int(random(0, 100));
@@ -754,8 +758,8 @@ function generateFriend() {
     if (randomBGsame % 6  == 0) {
     let sizeBGY = random(5, 15);
   }
-    let posX = random(100, 700 - randomBackgroundSize);
-    let posY = random(100, 700 - randomBackgroundSize);
+    let posX = random(-100, 500 - randomBackgroundSize);
+    let posY = random(-100, 500 - randomBackgroundSize);
     if (randomBGmove < 10 || randomBGmove > 40) {
       randomBGmove = 0;
     }
@@ -783,7 +787,7 @@ function generateFriend() {
     } else if (randomBackgroundType < 90) {
       newPatternArray.push(new Pattern(posX, posY, randomBackgroundSize, randomBackgroundSize, sizeBGX, sizeBGY, color(colorList[randomColor]), -0.005, coolSubArray, randomBGmove, randomBackgroundSize / random(5, 30), randomBGmove, randomBackgroundSize / random(5, 30)));
     } else {
-      newPatternArray.push(new Pattern(150, 150, randomBackgroundSize, randomBackgroundSize, 10, 10, color(colorList[randomColor]), -0.005, allFunctionArray, randomBGmove, randomBackgroundSize / random(5, 30), randomBGmove, randomBackgroundSize / random(5, 30)));
+      newPatternArray.push(new Pattern(posX, posY, randomBackgroundSize, randomBackgroundSize, 10, 10, color(colorList[randomColor]), -0.005, allFunctionArray, randomBGmove, randomBackgroundSize / random(5, 30), randomBGmove, randomBackgroundSize / random(5, 30)));
     }
   }
   let randomSameAlt = int(random(1, 6));
@@ -835,7 +839,7 @@ function generateFriend() {
   if (randomSame % 6  == 0 && sizeX != 2) {
     sizeX += int(random(- 1, - sizeX * 0.9))
   }
-  newPatternArray.push(new Pattern(200, 200, 400, 400, sizeX, sizeY, color(colorList[1]), -0.005, allFunctionArray, 0, 1, 20, 100));
+  newPatternArray.push(new Pattern(0, 0, 400, 400, sizeX, sizeY, color(colorList[1]), -0.005, allFunctionArray, 0, 1, 20, 100));
   if (sizeX > 2 && sizeY > 2) {
     newPatternArray[newPatternArray.length - 1] = alterFillMid(newPatternArray[newPatternArray.length - 1], [1, 2, 8], 3);
   }
@@ -844,20 +848,24 @@ function generateFriend() {
 
 function mouseClicked() {
   if (dist(mouseX, mouseY, width, height) < 150 && transitionTimer > 30 && firstClick) {
-    displayMode = !displayMode;
-  } else if (displayMode) {
-    let posX = menuMargin;
-    let posY = menuMargin;
-    for(let i = 0; i < friendArray.length; i++) {
-      if(mouseX > posX && mouseY > posY + scroll && mouseX < posX + buttonSize && mouseY < posY + buttonSize + scroll) {
-        displayMode = false;
-        currentFriendNumber = i;
-        currentFriend = friendArray[currentFriendNumber];
-      }
-      posX += buttonSize;
-      if (i % 4 == 3) {
-        posY += buttonSize;
-        posX = menuMargin;
+      displayMode = !displayMode;
+  } else {
+    if (!displayMode) {
+      generateFriendTrigger();
+    } else {
+      let posX = menuMargin;
+      let posY = menuMargin;
+      for(let i = 0; i < friendArray.length; i++) {
+        if(mouseX > posX && mouseY > posY + scroll && mouseX < posX + buttonSize && mouseY < posY + buttonSize + scroll) {
+          displayMode = false;
+          currentFriendNumber = i;
+          currentFriend = friendArray[currentFriendNumber];
+        }
+        posX += buttonSize;
+        if (i % 4 == 3) {
+          posY += buttonSize;
+          posX = menuMargin;
+        }
       }
     }
   }
@@ -865,15 +873,7 @@ function mouseClicked() {
 
 function keyPressed() {
   if (keyCode === 32) {
-    let newPatternArray = generateFriend();
-    friendArray.push(new Friend(0, 0, 1, newPatternArray));
-    currentFriendNumber = friendArray.length - 1;
-    currentFriend = friendArray[currentFriendNumber];
-    if (!firstClick) {
-      imaginaryGadgets.loop(0, 1, 0.3);
-      firstClick = true;
-    }
-    displayMode = false;
+    generateFriendTrigger();
   }
   if (keyCode === 40 && displayMode) {
     scroll -= scrollButtonAmount;
@@ -890,17 +890,35 @@ function keyPressed() {
   }
 }
 
+function generateFriendTrigger() {
+  let newPatternArray = generateFriend();
+    friendArray.push(new Friend(newPatternArray));
+    currentFriendNumber = friendArray.length - 1;
+    currentFriend = friendArray[currentFriendNumber];
+    if (!firstClick) {
+      //imaginaryGadgets.loop(0, 1, 0.3);
+      firstClick = true;
+      instructionTextPos -= 75;
+    }
+    displayMode = false;
+}
+
 function preventSpaceScroll(e) {
   if (e.code === "Space") {
+    e.preventDefault();
+  }
+  if (e.code === "ArrowUp") {
+    e.preventDefault();
+  }
+  if (e.code === "ArrowDown") {
     e.preventDefault();
   }
 }
 
 function windowResized() {
-  resizeCanvas(
-    container.clientWidth,
-    container.clientHeight
-  );
+  windowSizeX = container.clientWidth;
+  windowSizeY = container.clientHeight;
+  resizeCanvas(windowSizeX, windowSizeY);
   resizeThings();
 }
 
@@ -917,9 +935,10 @@ function setup() {
   canvas.elt.addEventListener("mouseleave", () => {
     window.removeEventListener("keydown", preventSpaceScroll);
   });
-  resizeThings();
+  windowResized();
+  instructionTextPos = width / 2;
 }
-
+ 
 function resizeThings() {
   menuMargin = width / 40;
   buttonSize = width / 4 - (menuMargin / 2);
@@ -927,6 +946,12 @@ function resizeThings() {
   menuButtonSize = width / 8;
   buttonTextSize = width / 27;
   shapeButtonPadding = width / 27;
+  minDimension = min(width, height);
+  friendWidthMult = minDimension / 700;
+  friendLocX = (width - (400 * friendWidthMult)) / 2;
+  friendLocY = (height - (400 * friendWidthMult)) / 2;
+  friendSimpleY = (width / 20);
+  instructionTextPos = width / 2;
 }
 
 function draw() {
@@ -959,7 +984,7 @@ function draw() {
         noStroke();
         rect(-shapeButtonPadding, -shapeButtonPadding, buttonSize, buttonSize, 20);
       }
-      friendArray[i].drawFriendSimple();
+      friendArray[i].drawFriendSimple(friendSimpleY, friendSimpleY, friendWidthMult);
       pop();
       posX += buttonSize;
       if (i % 4 == 3) {
@@ -967,44 +992,21 @@ function draw() {
         posX = menuMargin * 2.5;
       }
     }
-    instructions += "(space) generate another friend   (m) back"
+    instructions += "(click) generate another friend   (m) back"
     if (friendArray.length >= 16) {
       instructions += "   (up/down) scroll";
     }
   } else if (firstClick) {
-    currentFriend.drawFriend();
-    instructions += "(space) generate another friend   (m) menu";
+    currentFriend.drawFriend(friendLocX, friendLocY, friendWidthMult);
+    instructions += "(click) generate another friend   (m) menu";
   } else {
     fill(20);
     noStroke();
-    textFont("Courier", 30);
-    text("All my friends live in my computer.", 400, 400);
-    textSize(20);
-    text("Come and meet them! :3", 400, 430);
-    instructions += "(space) generate a friend";
-  }
-  if (firstClick) {
-    if (dist(mouseX, mouseY, width, height) < 150) {
-    animationTimer += 0.5;
-    menuScale = 1 + sin(animationTimer) * (1/animationTimer) * 0.1;
-    fill(90);
-  } else {
-    menuScale = 1;
-    animationTimer = 0;
-    fill(70);
-  }
-  let buttonText = "menu";
-  if (displayMode) {
-    buttonText = "back";
-  }
-  push();
-  translate(width, height);
-  scale(menuScale);
-  ellipse(0, 0, 300);
-  fill(10);
-  textFont("Courier", buttonTextSize);
-  text(buttonText, -70, -50);
-  pop();
+    textFont("Courier", 32);
+    text("All my friends live in my computer.", width / 2, height / 2);
+    textSize(25);
+    text("Come and meet them!", width / 2, height / 2 + 30);
+    instructions += "(click) generate a friend";
   }
   if (currentFriendNumber != 0 && firstClick && !displayMode) {
     instructions += "   (left) previous friend";
@@ -1017,5 +1019,28 @@ function draw() {
   fill(10);
   noStroke();
   textFont("Courier", 13);
-  text(instructions, width / 2, height - 7);
+  text(instructions, (instructionTextPos), height - 7);
+  if (firstClick) {
+    if (dist(mouseX, mouseY, width, height) < 150) {
+    animationTimer += 0.5;
+    menuScale = 1 + sin(animationTimer) * (1/animationTimer) * 0.1;
+    fill(90);
+    } else {
+      menuScale = 1;
+      animationTimer = 0;
+      fill(70);
+    }
+    let buttonText = "menu";
+    if (displayMode) {
+      buttonText = "back";
+    }
+    push();
+    translate(width, height);
+    scale(menuScale);
+    ellipse(0, 0, 300);
+    fill(10);
+    textFont("Courier", buttonTextSize);
+    text(buttonText, -70, -50);
+    pop();
+  }
 }
