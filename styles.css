@@ -489,6 +489,16 @@ nav a:hover {
 
 .buttonIcon {
   opacity: 0.5;
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+
+  top: 60%;
+  left: 50%;
+  padding: 0px;
+  margin: 0px;
+  transform: translate(-50%, -50%);
 }
 
 footer {
