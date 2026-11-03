@@ -3,6 +3,7 @@
   --titleColor: #FFFFFF;
   --linkColor: #FFFFFF;
   --hoverColor: #b2e7f5;
+  --highlightColor: #f0ba28;
   --backgroundColor: #1A1D33;
   --backgroundSecondaryColor: #253063;
   --headerColor: #254099;
@@ -12,6 +13,10 @@
   --footerLinkColor: #df8ca1;
   --bottomTextColor: #3a316e;
   --backButtonColor: #f56;
+  --softwareButtonColor: rgb(21, 145, 150);
+  --softwareButtonHoverColor: rgb(78, 196, 123);
+  --motionButtonColor: rgb(84, 30, 184);
+  --motionButtonHoverColor: rgb(123, 48, 184);
   --contentWidth: 70dvw;
   /*
   --showcasePanelWidth: calc((var(--contentWidth) / 3) - 10px);
@@ -27,7 +32,7 @@
   :root {
     --contentWidth: calc(100% - 20px);
     --showcasePanelWidth: var(--contentWidth);
-    --bigMargin: 5px;
+    --bigMargin: 8px;
     --borderCurve: 10px;
     --borderWidth: 5px;
   }
@@ -41,6 +46,10 @@
     visibility: hidden;
   }
 
+  .websiteButton {
+    height: 40vh;
+  }
+
   .contactInfo {
     width: 80vw;
   }
@@ -50,6 +59,10 @@
   .headerInfo {
     width: var(--contentWidth);
     margin: auto;
+  }
+
+  .websiteButton {
+    height: 50vh;
   }
 }
 
@@ -182,7 +195,17 @@ header {
 
 .bigHeader {
   font-size: clamp(10px, 9vw, 4rem);
-  margin: calc(var(--bigMargin) + 10px) 5px var(--bigMargin) 5px;
+  margin: 5px;
+}
+
+.centerHeader {
+  text-align: center;
+}
+
+.subHeading {
+  font-size: clamp(16px, 4vw, 1.5rem);
+  font-weight: 450;
+  margin-bottom: var(--bigMargin);
 }
 
 .bigProjectTitle {
@@ -233,6 +256,8 @@ nav a:hover {
   transform: scale(1.1);
   animation: 1s linear infinite colorPulse;
 }
+
+
 .logo {
   position: relative;
   width: clamp(50px, 20vw, 100px);
@@ -277,13 +302,14 @@ nav a:hover {
 
 .showcaseElement {
   border: white;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.2);
   width: var(--showcasePanelWidth);
   border: white var(--borderWidth) solid;
   border-radius: var(--borderCurve);
   margin: 0px auto;
   margin-bottom: var(--bigMargin);
   height: auto;
+  filter: drop-shadow(2px 2px 7px rgba(0, 0, 0, 0.4));
 }
 
 .showcaseElement * {
@@ -331,14 +357,37 @@ nav a:hover {
   border-radius: var(--borderCurve);
 }
 
+.centralVideo {
+  width: clamp(100px, 90%, 80vh);
+  margin: auto;
+  margin-bottom: var(--bigMargin);
+  object-fit: fill;
+  aspect-ratio: 16/9;
+  display: block;
+  border-radius: var(--borderCurve);
+  filter: drop-shadow(2px 2px 7px rgba(0, 0, 0, 0.4));
+}
+
+.divider {
+  height: 5vh;
+  display: block;
+}
+
+.smallCaption {
+  font-size: clamp(10px, 4vw, 1.5rem);
+  margin: 10px;
+  text-align: center;
+  opacity: 0.7;
+}
+
 .projectDescription {
   padding: 0px 10px 10px 10px;
-  font-size: 1.1rem;
   flex: 1 1 350px;
 }
 
 .projectDescription p {
   margin-bottom: 10px;
+  font-size: clamp(15px, 3vw, 1.4rem);
 }
 
 .projectDescription p:first-of-type {
@@ -347,6 +396,10 @@ nav a:hover {
 
 .projectTitle {
   margin: 0px;
+  font-size: clamp(10px, 7vw, 3.2rem);
+  margin: 10px 0px 10px 15px;
+  display: inline-block;
+  color: var(--textColor);
 }
 
 .bottomText {
@@ -356,11 +409,8 @@ nav a:hover {
 }
 
 .projectTitle a {
-  font-size: clamp(10px, 7vw, 3.2rem);
-  margin: 10px 0px 10px 15px;
-  display: inline-block;
-  text-decoration: none;
   color: var(--textColor);
+  text-decoration: none;
   transition: transform 200ms ease;
 }
 
@@ -371,6 +421,74 @@ nav a:hover {
 .projectTitle a:hover {
   transform: scale(1.05);
   animation: 1s linear infinite colorPulse;
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: var(--borderCurve);
+  margin-bottom: var(--bigMargin);
+  height: auto;
+  filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.4));
+}
+
+.websiteButton {
+  margin: var(--bigMargin);
+  padding: clamp(5px, 2%, 20px);
+  font-size: clamp(10px, 2rem, 2rem);
+  color: var(--textColor);
+  display: block;
+  width: 20%;
+  border-radius: 10px;
+  flex: 1 1 auto;
+  min-height: 0px;
+  text-decoration: none;
+  transition: transform, 0.2s ease, background-color 0.2s ease;
+  filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.4));
+}
+
+.websiteButton:focus-visible {
+  outline: 5px solid var(--highlightColor);
+  outline-offset: 5px;
+}
+
+.websiteButton:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(10px 10px 8px rgba(0, 0, 0, 0.4));
+}
+
+#softwareButton {
+  background-color: var(--softwareButtonColor);
+  
+}
+
+#motionButton {
+  background-color: var(--motionButtonColor);
+  
+}
+
+#softwareButton:hover {
+  background-color: var(--softwareButtonHoverColor);
+  
+}
+
+#motionButton:hover {
+  background-color: var(--motionButtonHoverColor);
+}
+
+.buttonText {
+  font-size: clamp(20px, 3vw, 3rem);
+  font-weight: bold;
+  margin: auto;
+}
+
+.buttonIcon {
+  opacity: 0.5;
 }
 
 footer {

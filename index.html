@@ -24,8 +24,9 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="/#top">About</a></li>
-                        <li><a href="/#projectsHeader">Projects</a></li>
+                        <li><a href="/#About">About</a></li>
+                        <li><a href="/software/">Software</a></li>
+                        <li><a href="/motionGraphics/">Motion Graphics</a></li>
                         <li><a href="/#contactHeader">Contact</a></li>
                     </ul>
                 </nav>
@@ -38,117 +39,40 @@
             <img class="burst" src="/images/burst_W9_D15_R50_G180_B230.svg" alt="" id="burst1" />
         </div>
         <main>
-            <img id="headshot" src="/images\headshot.png" alt="A headshot of me! Asher Lahm. I have curly brown hair, thin rimmed glasses, and I'm smiling at the camera.">
-            <h2 class="bigHeader">Hello!</h2>
+            <div class="divider"></div>
+            <h2 class="bigHeader">Asher Lahm</h2>
+            <p class="subHeading">Motion Designer & Developer</p>
             <div class="introText">
-                <p>I'm Asher, and I'm an artist and developer. I enjoy making colorful shapes.</p>
-                <p>I like working with code, motion graphics, 3D modeling and animation, and algorithms!</p>
+                <p>Creating motion graphics, games, and interactive artworks.</p>
             </div>
-            <h2 class="bigHeader" id="projectsHeader">Software Projects</h2>
             <div class="showcase">
                 <div class="showcaseElement">
-                    <h3 class="projectTitle"><a href="https://github.com/raedotzip/You-Aint-The-Boss-Of-Me" target="_blank">You Ain't the Boss of Me!<i class="fa fa-external-link" aria-hidden="true"></i></a></h3>
+                    <h3 class="projectTitle"><a href="https://youtu.be/5-HtkzO2KhQ" target="_blank">Motion Graphics Reel <i class="fa fa-external-link" aria-hidden="true"></i></a></h3>
+                    <div class="projectDetails"></div>
+                        <iframe class="centralVideo" src="https://www.youtube.com/embed/5-HtkzO2KhQ?si=HPTrgR0QUV7iarLy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <h2 class="bigHeader centerHeader">My Projects</h2>
+                <p class="smallCaption">Click to view</p>
+                <div class="buttonsContainer">
+                    <a class="websiteButton" id="softwareButton" href="/software/"><p class="buttonText">Explore Software Projects</p><img src="/images/square-up-right-solid-full.svg" alt="Go to software projects" class="buttonIcon"></a>
+                    <a class="websiteButton" id="motionButton" href="/motionGraphics/"><p class="buttonText">Explore Motion Graphics Projects</p><img src="/images/square-up-right-solid-full.svg" alt="Go to motion graphics projects" class="buttonIcon"></a>
+                </div>
+                <div class="divider"></div>
+                <div class="showcaseElement" id="About">
+                    <h3 class="projectTitle">About Me</h3>
                     <div class="projectDetails">
-                        <iframe class="projectVideo" src="https://www.youtube.com/embed/1dXKQf_M7ro?si=VcCs0MQ0U64I8ESp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <div class="projectImages">
+                            <img src="/images/headshot.avif" alt="A portrait of Asher Lahm, a young man with short brown hair and glasses, smiling.">
+                        </div>
                         <div class="projectDescription">
-                            <p>"You Ain't the Boss of Me" is a fast-paced VR hack-and-slash bullet hell where you take on relentless, back-to-back boss fights to take revenge against your captors. Each boss is an intense bullet hell challenge where you must dodge and parry incoming attacks and strike at the right moment. Grab your swords and prove that they're not the boss of you!</p>
-                            <p>It is currently only playable on Meta VR headsets.</p>
+                            <p>Hello! My name is Asher Lahm. I'm a student at the University of Nebraska-Lincoln where I study Computer Science and Emerging Media Arts, as well as lead the University's Splatoon team.</p>
+                            <p>I started playing with motion graphics and game design in elementary school through the level editor in the video game, Geometry Dash. It sparked my love for sound reactive visuals, vibrant colors, and abstract geometric designs, as well as gameplay design and making modular/adaptive interactive systems!</p>
+                            <p>In my free time, I'm always looking for new stories to experience through games, or returning to some of my old favorites like Splatoon, Katamari Damacy, and Geometry Dash. I'm also always exploring new mediums and software that I can use to create my next creative project!</p>
                         </div>
                     </div>
                 </div>
-                <div class="showcaseElement">
-                    <h3 class="projectTitle"><a href="/computerFriends/" target="_blank">Computer Friends <i class="fa fa-external-link" aria-hidden="true"></i></a></h3>
-                    <div class="projectDetails">
-                        <a href="/computerFriends/" target="_blank">
-                            <div class="projectImages">
-                                <img src="/images/computerFriends/computerFriendsScreenshot1.png" alt="computer friends project image. A collection of green patterns float in a white void, with a bold hot pink pattern overlayed on top.">
-                            </div>
-                        </a>
-                        <div class="projectDescription">
-                            <p>Computer Friends is an interactive piece of art that generates friends.</p>
-                            <p>Friends are randomly generated collections of patterns. Each is unique, with its own randomly generated color palette, randomly selected shapes, and randomized wave-like movements.</p>
-                            <p>See if you can find a friend that resonates with you, or one that you think is able to represent yourself well!</p>
-                            <p>Made using the p5js library, and hosted on my website. Click the above link to see it.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="showcaseElement">
-                    <h3 class="projectTitle"><a href="https://editor.p5js.org/Asher-Lahm/sketches/MoSSIhlQi" target="_blank">mininova <i class="fa fa-external-link" aria-hidden="true"></i></a></h3>
-                    <div class="projectDetails">
-                        <a href="https://editor.p5js.org/Asher-Lahm/sketches/MoSSIhlQi" target="_blank">
-                            <div class="projectImages">
-                                <img src="/images\mininova\mininovaScreenshot1.jpg" alt="mininova image. a white and gray burst shape sits in the middle of the image over a bright pink and mint green background. Smaller gray shapes from the sides of the image float towards the center of the image">
-                                <img src="/images\mininova\mininovaScreenshot2.jpg" alt="A green and blue burst shape sits on the left side of the image over a dark gray background. Smaller red, green, and blue shapes float from the sides of the image towards the center.">
-                            </div>
-                        </a>
-                        <div class="projectDescription">
-                            <p>mininova is an interactive music visualizer, featuring many functions to create fun and flashy visuals synced to music.</p>
-                            <p>It features the central nova, which pulses to the music, as well as sound-reactive shapes, that spawn in around the nova and are pulled in by it.</p>
-                            <p>Some of the user controls include changing the color palette, increasing and decreasing sound sensitivity, moving the nova around the screen, manually spawning shapes, changing the spin intensity, and typing in lyrics live to then be shown on-screen.</p>
-                            <p>It is also currently hosted on p5.js, and can run in your browser!</p>
-                        </div>
-                    </div>
-                </div>
-                <h2 class="bigHeader" id="projectsHeader">Video Projects</h2>
-                <div class="showcaseElement">
-                    <h3 class="projectTitle"><a href="https://youtu.be/pyQhkYifzvY" target="_blank">Nebbys Intro <i class="fa fa-external-link" aria-hidden="true"></i></a></h3>
-                    <div class="projectDetails">
-                        <iframe class="projectVideo" src="https://www.youtube.com/embed/pyQhkYifzvY?si=96PzKxsXxZeULR-c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <div class="projectDescription">
-                            <p>This is a motion graphics project I worked on in class. It was in the process of making this project that I really began to feel comfortable in After Effects.</p>
-                            <p>I was able to incorporate a lot of different mediums, like Blender and TouchDesigner. I also picked up the expressions editor. The animated sine wave were animated entirely using expressions!</p>
-                            <p>I modified my Computer Friends project to export friends as SVG files, and I then animated them here!</p>
-                            <p>I became fascinated by the text effects included in After Effects. I wanted to apply these effects to my shapes from Computer Friends. After some tinkering, I created my own font comprised of shapes, which I could then animate using text effects! You can see this effect in the lines of shapes that rush across the screen.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="showcaseElement">
-                    <h3 class="projectTitle"><a href="https://youtu.be/-zRCsJoIrJ0" target="_blank">Animated Text <i class="fa fa-external-link" aria-hidden="true"></i></a></h3>
-                    <div class="projectDetails">
-                        <iframe class="projectVideo" src="https://www.youtube.com/embed/-zRCsJoIrJ0?si=PKFi7OkpZ8f8ByTo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <div class="projectDescription">
-                            <p class="warning">Warning: Contains harsh language!</p>
-                            <p>This projet was the final for my motion graphics class.</p>
-                            <p>I animated a humorous scene from one of my favorite shows, It's Always Sunny in Philadelphia!</p>
-                            <p>I challenged myself to learn some new effects using random noise, masks, and blending modes. I followed some tutorials online for certain effects, like the burning paper or the metallic text. I then used that knowledge to create my own animated chalkboard effect!</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="showcaseElement">
-                    <h3 class="projectTitle"><a href="https://youtu.be/C_Bqg7J-H0Q" target="_blank">Widgi Phone <i class="fa fa-external-link" aria-hidden="true"></i></a></h3>
-                    <div class="projectDetails">
-                        <iframe class="projectVideo" src="https://www.youtube.com/embed/C_Bqg7J-H0Q?si=wqvHgIKiZR9m5Xkr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <div class="projectDescription">
-                            <p>This project is a few years older than most other projects on this website, but I'm still proud of it and want to share it!</p>
-                            <p>This project was made for the Nebraska FBLA State Leadership Conference in 2023, and it was the first time I had used Blender!</p>
-                            <p>I designed a fake product, a modular smartphone called "Widgi," and then animated an advertisment. I won first place at the competition!</p>
-                        </div>
-                    </div>
-                </div>
-                <!--
-                <h2 class="bigHeader" id="projectsHeader">Geometry Dash Projects</h2>
-                <div class="showcaseElement">
-                    <h3 class="projectTitle"><a href="https://youtu.be/bP6FLh1Q68k?si=cGJF9qY2azucJMTG" target="_blank">Unnamed Shooting Star Level <i class="fa fa-external-link" aria-hidden="true"></i></a></h3>
-                    <div class="projectDetails">
-                        <iframe class="projectVideo" src="https://www.youtube.com/embed/if8JSUo1W4E?si=a0roN-1Av8DUtEsv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <div class="projectDescription">
-                            <p>Geometry Dash had an update in 2024, and so I returned to make something new! However, I just wasn't having fun with it so it remains unfinished for now.</p>
-                            <p>I do really enjoy the medium of Geometry Dash levels. It adds a fun new element of gameplay and interactivity to motion graphics. However, the level editor just isn't very convenient to use, and I'm so happy to be working with more professional tools at this point.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="showcaseElement">
-                    <h3 class="projectTitle"><a href="https://youtu.be/if8JSUo1W4E" target="_blank">Haywire <i class="fa fa-external-link" aria-hidden="true"></i></a></h3>
-                    <div class="projectDetails">
-                        <iframe class="projectVideo" src="https://www.youtube.com/embed/bP6FLh1Q68k?si=cGJF9qY2azucJMTG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <div class="projectDescription">
-                            <p>This is another project that's quite a bit older, being finished around 2019</p>
-                            <p>This was the final level I ever completed in Geometry Dash before moving on to other mediums.</p>
-                            <p>It doesn't have any particular theme or story. It's just what I thought looked nice! A bit of visual candy.</p>
-                        </div>
-                    </div>
-                </div>
-                -->
             </div>
         </main>
     </body>
