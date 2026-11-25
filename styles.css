@@ -7,7 +7,8 @@
   --backgroundColor: #1A1D33;
   --backgroundSecondaryColor: #253063;
   --headerColor: #254099;
-  --footerColor: #232044;
+  --footerTop: #5566A3;
+  --footerColor: #161133;
   --footerHeaderColor: #e0def5;
   --footerTextColor: #f7f6ff;
   --footerLinkColor: #df8ca1;
@@ -90,7 +91,7 @@ html {
   padding: inherit;
 }
 
-body {
+main {
   color: var(--textColor);
   overflow-x: hidden;
 }
@@ -169,12 +170,28 @@ canvas {
   outline: rgb(58, 100, 214) var(--borderWidth) solid;
 }
 
-header {
+.header {
   background-color: var(--headerColor);
   position: sticky;  
   top: 0;
   z-index: 10;
+  width: 100%
+}
+
+.header-content {
   overflow-x: hidden;
+}
+
+.header-wave {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+    height: clamp(10px, 4vw, 50px);
+
+    display: block;
+    fill: var(--headerColor);
 }
 
 .headerInfo {
@@ -404,7 +421,7 @@ nav a:hover {
 
 .bottomText {
   margin: 30px auto;
-  color: var(--bottomTextColor);
+  color: var(--footerColor);
   font-size: clamp(13px, 2vw, 1.2rem);
 }
 
@@ -501,10 +518,27 @@ nav a:hover {
   transform: translate(-50%, -50%);
 }
 
-footer {
+.footer {
+  position: relative;
+  background: var(--footerColor);
+  background: linear-gradient(0deg,var(--footerColor) 0%, var(--footerTop) 100%);
+}
+
+.footer-wave {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+
+    width: 100%;
+    height: clamp(20px, 8vw, 100px);
+
+    display: block;
+    fill: var(--footerTop);
+}
+
+.footer-content {
   width: 100%;
   margin-top: calc(7 * var(--bigMargin));
-  background: var(--footerColor);
   padding: var(--bigMargin);
   text-align: center;
   display: flex;
@@ -514,6 +548,8 @@ footer {
 
 .footerShapes {
   width: clamp(100px, 19vw, 200px);
+  fill: black;
+  opacity: 0.2;
 }
 
 footer * {
