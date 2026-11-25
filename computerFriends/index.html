@@ -15,21 +15,12 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/addons/p5.sound.min.js"></script>
     </head>
     <body>
-        <svg style="display: none;"xmlns="http://www.w3.org/2000/svg">
-            <symbol id="wave" viewBox="0 0 1000 100">
-                <path d="M0,50 C200,0 300,100 500,100 C700,100 800,0 1000,50 L1000,100 L0,100 Z" />
-            </symbol>
-
-            <symbol id="waveU" viewBox="0 0 1000 100">
-                <path d="M0,50 C200,100 300,0 500,0 C700,0 800,100 1000,50 L1000,0 L0,0 Z" />
-            </symbol>
-        </svg>
         <header class="header">
             <svg class="header-wave"
             viewBox ="0 0 1000 100"
             preserveAspectRatio="none"
             aria-hidden="true">
-            <use href="#waveU" />
+            <use href="/images/symbols.svg#header-wave" />
             </svg>
             <div class="headerInfo">
                 <div class="headerLeft">
@@ -56,12 +47,15 @@
             <img class="burst" src="/images/burst_W9_D15_R50_G180_B230.svg" alt="" id="burst1" />
         </div>
         <main>
-            <div class="projectPageShowcase">
-                <h2 class="bigProjectTitle">Computer Friends</h2>
-                <div id="p5-container"></div>
-                <script src="computerFriends.js"></script>
-                <p class="projectPageDescription">Welcome to computer friends! This is a simple program that generates Friends, arrays of patterns of colorful shapes.!</p>
-                <a href="/"><button class="backButton">Back</button></a>
+            <div class="mainContent">
+                <div class="divider"></div>
+                <div class="projectPageShowcase">
+                    <h2 class="bigProjectTitle">Computer Friends</h2>
+                    <div id="p5-container"></div>
+                    <script src="computerFriends.js"></script>
+                    <p class="projectPageDescription">Welcome to computer friends! This is a simple program that generates Friends, arrays of patterns of colorful shapes.!</p>
+                    <a href="/"><button class="backButton">Back</button></a>
+                </div>
             </div>
         </main>
         <footer class="footer">
@@ -69,7 +63,7 @@
             viewBox ="0 0 1000 100"
             preserveAspectRatio="none"
             aria-hidden="true">
-            <use href="#wave" />
+            <use href="/images/symbols.svg#wave" />
             </svg>
             <div class="footer-content">
                 <img src="/images/shapes1.svg" alt="" class="footerShapes" aria-hidden="true">

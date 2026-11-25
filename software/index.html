@@ -13,21 +13,12 @@
         <script src="https://kit.fontawesome.com/76314d4d6f.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <svg style="display: none;"xmlns="http://www.w3.org/2000/svg">
-            <symbol id="wave" viewBox="0 0 1000 100">
-                <path d="M0,50 C200,0 300,100 500,100 C700,100 800,0 1000,50 L1000,100 L0,100 Z" />
-            </symbol>
-
-            <symbol id="waveU" viewBox="0 0 1000 100">
-                <path d="M0,50 C200,100 300,0 500,0 C700,0 800,100 1000,50 L1000,0 L0,0 Z" />
-            </symbol>
-        </svg>
         <header class="header">
             <svg class="header-wave"
             viewBox ="0 0 1000 100"
             preserveAspectRatio="none"
             aria-hidden="true">
-            <use href="#waveU" />
+            <use href="/images/symbols.svg#header-wave" />
             </svg>
             <div class="headerInfo">
                 <div class="headerLeft">
@@ -54,49 +45,52 @@
             <img class="burst" src="/images/burst_W9_D15_R50_G180_B230.svg" alt="" id="burst1" />
         </div>
         <main>
+            
             <div class="divider"></div>
-            <h2 class="bigHeader" id="projectsHeader">Software Projects</h2>
-            <div class="showcase">
-                <div class="showcaseElement">
-                    <h3 class="projectTitle"><a href="https://github.com/raedotzip/You-Aint-The-Boss-Of-Me" target="_blank">You Ain't the Boss of Me!<i class="fa fa-external-link" aria-hidden="true"></i></a></h3>
-                    <div class="projectDetails">
-                        <iframe class="projectVideo" src="https://www.youtube.com/embed/1dXKQf_M7ro?si=VcCs0MQ0U64I8ESp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <div class="projectDescription">
-                            <p>"You Ain't the Boss of Me" is a fast-paced VR hack-and-slash bullet hell where you take on relentless, back-to-back boss fights to take revenge against your captors. Each boss is an intense bullet hell challenge where you must dodge and parry incoming attacks and strike at the right moment. Grab your swords and prove that they're not the boss of you!</p>
-                            <p>It is currently only playable on Meta VR headsets.</p>
+            <div class="mainContent">
+                <h2 class="bigHeader" id="projectsHeader">Software Projects</h2>
+                <div class="showcase">
+                    <div class="showcaseElement">
+                        <h3 class="projectTitle"><a href="https://github.com/raedotzip/You-Aint-The-Boss-Of-Me" target="_blank">You Ain't the Boss of Me!<i class="fa fa-external-link" aria-hidden="true"></i></a></h3>
+                        <div class="projectDetails">
+                            <iframe class="projectVideo" src="https://www.youtube.com/embed/1dXKQf_M7ro?si=VcCs0MQ0U64I8ESp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <div class="projectDescription">
+                                <p>"You Ain't the Boss of Me" is a fast-paced VR hack-and-slash bullet hell where you take on relentless, back-to-back boss fights to take revenge against your captors. Each boss is an intense bullet hell challenge where you must dodge and parry incoming attacks and strike at the right moment. Grab your swords and prove that they're not the boss of you!</p>
+                                <p>It is currently only playable on Meta VR headsets.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="showcaseElement">
-                    <h3 class="projectTitle"><a href="/computerFriends/" target="_blank">Computer Friends <i class="fa-solid fa-arrow-up-right-from-square"></i></a></h3>
-                    <div class="projectDetails">
-                        <a href="/computerFriends/" target="_blank">
-                            <div class="projectImages">
-                                <img src="/images/computerFriends/computerFriendsScreenshot.avif" alt="computer friends project image. A collection of green patterns float in a white void, with a bold hot pink pattern overlayed on top.">
+                    <div class="showcaseElement">
+                        <h3 class="projectTitle"><a href="/computerFriends/" target="_blank">Computer Friends <i class="fa-solid fa-arrow-up-right-from-square"></i></a></h3>
+                        <div class="projectDetails">
+                            <a href="/computerFriends/" target="_blank">
+                                <div class="projectImages">
+                                    <img src="/images/computerFriends/computerFriendsScreenshot.avif" alt="computer friends project image. A collection of green patterns float in a white void, with a bold hot pink pattern overlayed on top.">
+                                </div>
+                            </a>
+                            <div class="projectDescription">
+                                <p>Computer Friends is an interactive piece of art that generates friends.</p>
+                                <p>Friends are randomly generated collections of patterns. Each is unique, with its own randomly generated color palette, randomly selected shapes, and randomized wave-like movements.</p>
+                                <p>See if you can find a friend that resonates with you, or one that you think is able to represent yourself well!</p>
+                                <p>Made using the p5js library, and hosted on my website. Click the above link to see it.</p>
                             </div>
-                        </a>
-                        <div class="projectDescription">
-                            <p>Computer Friends is an interactive piece of art that generates friends.</p>
-                            <p>Friends are randomly generated collections of patterns. Each is unique, with its own randomly generated color palette, randomly selected shapes, and randomized wave-like movements.</p>
-                            <p>See if you can find a friend that resonates with you, or one that you think is able to represent yourself well!</p>
-                            <p>Made using the p5js library, and hosted on my website. Click the above link to see it.</p>
                         </div>
                     </div>
-                </div>
-                <div class="showcaseElement">
-                    <h3 class="projectTitle"><a href="https://editor.p5js.org/Asher-Lahm/sketches/MoSSIhlQi" target="_blank">mininova <i class="fa fa-external-link" aria-hidden="true"></i></a></h3>
-                    <div class="projectDetails">
-                        <a href="https://editor.p5js.org/Asher-Lahm/sketches/MoSSIhlQi" target="_blank">
-                            <div class="projectImages">
-                                <img src="/images\mininova\mininovaScreenshot1.avif" alt="mininova image. a white and gray burst shape sits in the middle of the image over a bright pink and mint green background. Smaller gray shapes from the sides of the image float towards the center of the image">
-                                <img src="/images\mininova\mininovaScreenshot2.avif" alt="A green and blue burst shape sits on the left side of the image over a dark gray background. Smaller red, green, and blue shapes float from the sides of the image towards the center.">
+                    <div class="showcaseElement">
+                        <h3 class="projectTitle"><a href="https://editor.p5js.org/Asher-Lahm/sketches/MoSSIhlQi" target="_blank">mininova <i class="fa fa-external-link" aria-hidden="true"></i></a></h3>
+                        <div class="projectDetails">
+                            <a href="https://editor.p5js.org/Asher-Lahm/sketches/MoSSIhlQi" target="_blank">
+                                <div class="projectImages">
+                                    <img src="/images\mininova\mininovaScreenshot1.avif" alt="mininova image. a white and gray burst shape sits in the middle of the image over a bright pink and mint green background. Smaller gray shapes from the sides of the image float towards the center of the image">
+                                    <img src="/images\mininova\mininovaScreenshot2.avif" alt="A green and blue burst shape sits on the left side of the image over a dark gray background. Smaller red, green, and blue shapes float from the sides of the image towards the center.">
+                                </div>
+                            </a>
+                            <div class="projectDescription">
+                                <p>mininova is an interactive music visualizer, featuring many functions to create fun and flashy visuals synced to music.</p>
+                                <p>It features the central nova, which pulses to the music, as well as sound-reactive shapes, that spawn in around the nova and are pulled in by it.</p>
+                                <p>Some of the user controls include changing the color palette, increasing and decreasing sound sensitivity, moving the nova around the screen, manually spawning shapes, changing the spin intensity, and typing in lyrics live to then be shown on-screen.</p>
+                                <p>It is also currently hosted on p5.js, and can run in your browser!</p>
                             </div>
-                        </a>
-                        <div class="projectDescription">
-                            <p>mininova is an interactive music visualizer, featuring many functions to create fun and flashy visuals synced to music.</p>
-                            <p>It features the central nova, which pulses to the music, as well as sound-reactive shapes, that spawn in around the nova and are pulled in by it.</p>
-                            <p>Some of the user controls include changing the color palette, increasing and decreasing sound sensitivity, moving the nova around the screen, manually spawning shapes, changing the spin intensity, and typing in lyrics live to then be shown on-screen.</p>
-                            <p>It is also currently hosted on p5.js, and can run in your browser!</p>
                         </div>
                     </div>
                 </div>
@@ -107,7 +101,7 @@
             viewBox ="0 0 1000 100"
             preserveAspectRatio="none"
             aria-hidden="true">
-            <use href="#wave" />
+            <use href="/images/symbols.svg#wave" />
             </svg>
             <div class="footer-content">
                 <img src="/images/shapes1.svg" alt="" class="footerShapes" aria-hidden="true">

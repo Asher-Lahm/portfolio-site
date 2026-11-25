@@ -6,8 +6,9 @@
   --highlightColor: #f0ba28;
   --backgroundColor: #1A1D33;
   --backgroundSecondaryColor: #253063;
-  --headerColor: #254099;
-  --footerTop: #5566A3;
+  --headerColor: #2949b3;
+  --headerBottom: #285ab6;
+  --footerTop: #4664b8;
   --footerColor: #161133;
   --footerHeaderColor: #e0def5;
   --footerTextColor: #f7f6ff;
@@ -18,7 +19,10 @@
   --softwareButtonHoverColor: rgb(78, 196, 123);
   --motionButtonColor: rgb(84, 30, 184);
   --motionButtonHoverColor: rgb(123, 48, 184);
+  --buttonSectionColor: #cfecea;
+  --buttonSectionText: #1b1b3d;
   --contentWidth: 70dvw;
+  --wideContentWidth: 90dvw;
   /*
   --showcasePanelWidth: calc((var(--contentWidth) / 3) - 10px);
   */
@@ -32,6 +36,7 @@
 @media (max-width: 800px) {
   :root {
     --contentWidth: calc(100% - 20px);
+    --wideContentWidth: calc(100% - 20px);
     --showcasePanelWidth: var(--contentWidth);
     --bigMargin: 8px;
     --borderCurve: 10px;
@@ -115,7 +120,7 @@ body p {
   background: linear-gradient(180deg, var(--backgroundColor) 50%, var(--backgroundSecondaryColor) 90%);
 }
 
-main {
+.mainContent {
   width: var(--contentWidth);
   margin: auto;
 }
@@ -191,7 +196,6 @@ canvas {
     height: clamp(10px, 4vw, 50px);
 
     display: block;
-    fill: var(--headerColor);
 }
 
 .headerInfo {
@@ -213,6 +217,7 @@ canvas {
 .bigHeader {
   font-size: clamp(10px, 9vw, 4rem);
   margin: 5px;
+  padding: 0px;
 }
 
 .centerHeader {
@@ -395,6 +400,7 @@ nav a:hover {
   margin: 10px;
   text-align: center;
   opacity: 0.7;
+  padding: 0px;
 }
 
 .projectDescription {
@@ -421,8 +427,9 @@ nav a:hover {
 
 .bottomText {
   margin: 30px auto;
-  color: var(--footerColor);
+  color: white;
   font-size: clamp(13px, 2vw, 1.2rem);
+  opacity: 0.5;
 }
 
 .projectTitle a {
@@ -443,15 +450,52 @@ nav a:hover {
 .buttonsContainer {
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: var(--wideContentWidth);
   flex-direction: row;
   flex-wrap: wrap;
   margin: auto;
-  background-color: rgba(255, 255, 255, 1);
   border-radius: var(--borderCurve);
   margin-bottom: var(--bigMargin);
   height: auto;
+  padding: 0px;
+}
+
+.buttonsContent {
+  padding: var(--bigMargin) 0px;
+}
+
+.buttonsSection {
+  width: 100%;
+  text-align: center;
+  background-color: var(--buttonSectionColor);
+  color: var(--buttonSectionText);
+  overflow: visible;
+  position: relative;
   filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.4));
+}
+
+.top-wave {
+    position: absolute;
+    bottom: 99.9%;
+    left: 0;
+
+    width: 100%;
+    height: clamp(20px, 4vw, 50px);
+
+    display: block;
+    fill: var(--buttonSectionColor);
+}
+
+.bottom-wave {
+    position: absolute;
+    top: 99.9%;
+    left: 0;
+
+    width: 100%;
+    height: clamp(20px, 4vw, 50px);
+
+    display: block;
+    fill: var(--buttonSectionColor);
 }
 
 .websiteButton {
