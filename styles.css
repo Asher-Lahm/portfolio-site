@@ -29,6 +29,7 @@
   --showcasePanelWidth: var(--contentWidth);
   --showcasePanelHeight: 70dvh;
   --bigMargin: 30px;
+  --smallMargin: 10px;
   --borderCurve: 20px;
   --borderWidth: 10px;
 }
@@ -98,7 +99,7 @@ html {
 
 main {
   color: var(--textColor);
-  overflow-x: hidden;
+  overflow-y: visible;
 }
 
 body p {
@@ -122,6 +123,11 @@ body p {
 
 .mainContent {
   width: var(--contentWidth);
+  margin: auto;
+}
+
+.mainContentWide {
+  width: var(--wideContentWidth);
   margin: auto;
 }
 
@@ -314,14 +320,17 @@ nav a:hover {
     100% {color: var(--textColor);}
 }
 
+.describeProject {
+  width: var(--wideContentWidth);
+  border-radius: var(--borderCurve);
+  margin: 0px auto;
+  margin-bottom: var(--bigMargin);
+  height: auto;
+}
+
 .showcase {
   width: 100%;
   margin: var(--bigMargin) auto;
-}
-
-.showcase::after {
-  content: "";
-  width: var(--showcasePanelWidth)
 }
 
 .showcaseElement {
@@ -334,6 +343,7 @@ nav a:hover {
   margin-bottom: var(--bigMargin);
   height: auto;
   filter: drop-shadow(2px 2px 7px rgba(0, 0, 0, 0.4));
+  color: var(--textColor);
 }
 
 .showcaseElement * {
@@ -344,7 +354,7 @@ nav a:hover {
 .projectImages {
   display:flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   max-height: calc(var(--showcasePanelHeight) - 100px);
   gap: var(--bigMargin);
   margin-bottom: var(--bigMargin);
@@ -359,15 +369,63 @@ nav a:hover {
   border-radius: 10px;
   flex: 1 1 auto;
   min-height: 0px;
+  margin: 0px;
+  filter: drop-shadow(2px 2px 7px rgba(0, 0, 0, 0.2));
+}
+
+.articleImages {
+  display:flex;
+  flex-direction: column;
+  max-width: calc(var(--showcasePanelHeight) - 100px); 
+  align-items: flex-start;
+  gap: var(--smallMargin);
+  margin-bottom: var(--bigMargin);
+  margin: auto;
+}
+
+.articleImages img {
+  display: block;
+  max-height: var(--showcasePanelHeight);
+  max-width: var(--showcasePanelHeight); 
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  flex: 1 1 auto;
+  min-height: 0px;
+  margin: 0px;
+  filter: drop-shadow(2px 2px 7px rgba(0, 0, 0, 0.2));
+}
+
+.halfImageContainer {
+  display:flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--smallMargin);
+  max-width: var(--showcasePanelHeight);
+  max-height: var(--showcasePanelHeight);
+  width: 100%;
+}
+
+.halfImageContainer img {
+  display: block;
+  height: calc(calc(var(--showcasePanelHeight) / 2) - calc(var(--smallMargin) / 2)); 
+  width: 50%;
+  object-fit: cover;
+  border-radius: 10px;
+  flex: 1 1 auto;
+  min-height: 0px;
+  margin: 0px;
+  filter: drop-shadow(2px 2px 7px rgba(0, 0, 0, 0.2));
 }
 
 .projectDetails {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   width: calc(100% - 2 * var(--bigMargin));
   flex-direction: row;
   flex-wrap: wrap;
-  margin: auto;
+  margin: var(--bigMargin) auto;
   gap: var(--bigMargin);
   margin-bottom: var(--bigMargin);
 }
@@ -405,9 +463,12 @@ nav a:hover {
   padding: 0px;
 }
 
+
 .projectDescription {
   padding: 0px 10px 10px 10px;
-  flex: 1 1 350px;
+  flex: 1 1 max(400px, 40%);
+  text-align: left;
+  margin: 0px;
 }
 
 .projectDescription p {
@@ -424,7 +485,13 @@ nav a:hover {
   font-size: clamp(10px, 7vw, 3.2rem);
   margin: 10px 0px 10px 15px;
   display: inline-block;
-  color: var(--textColor);
+}
+
+.outSectionTitle {
+  margin: 0px;
+  font-size: clamp(10px, 9vw, 4rem);
+  margin: 10px 0px 10px 15px;
+  display: inline-block;
 }
 
 .bottomText {
@@ -466,13 +533,13 @@ nav a:hover {
   padding: var(--bigMargin) 0px;
 }
 
-.buttonsSection {
+.outSection {
   width: 100%;
   text-align: center;
   background-color: var(--buttonSectionColor);
   color: var(--buttonSectionText);
   overflow: visible;
-  position: relative;
+  position: inline-block;
   filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.4));
 }
 
@@ -613,7 +680,7 @@ footer a {
 }
 
 #contactHeader {
-  font-size: clamp(10px, 9vw, 5rem);
+  font-size: clamp(10px, 6vw, 3rem);
   color: var(--footerHeaderColor);
 }
 

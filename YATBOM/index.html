@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Asher Lahm</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Peruse my projects and see some cool art and software!">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/styles.css?v=8" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="icon" type="image/x-icon" href="/images/logo.svg">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/76314d4d6f.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/addons/p5.sound.min.js"></script>
+    </head>
+    <body>
+        <header class="header">
+            <svg class="header-wave"
+            viewBox ="0 0 1000 100"
+            preserveAspectRatio="none"
+            aria-hidden="true">
+            <use href="/images/symbols.svg#header-wave" />
+            </svg>
+            <div class="headerInfo">
+                <div class="headerLeft">
+                    <div class="logo">
+                        <img id="logo1" src="/images/lil fella.svg" alt="A creature of some kind made up of basic text characters with a pentagon-shaped nose.">
+                        <img id="logo2" src="/images/lil fella happi.svg" aria-hidden="true">
+                    </div>
+                    <h1 ><a id="headerText" href="/">Asher Lahm</a></h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="/#About">About</a></li>
+                        <li><a href="/software/">Software</a></li>
+                        <li><a href="/motionGraphics/">Motion Graphics</a></li>
+                        <li><a href="/#contactHeader">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="backgroundElements" aria-hidden="true">
+            <div class="gradientBackground"></div>
+            <img class="burst" src="/images/burst_W10_D18_R50_G140_B240.svg" alt="" id="burst3" />
+            <img class="burst" src="/images/burst_W11_D30_R40_G60_B150.svg" alt="" id="burst2" />
+            <img class="burst" src="/images/burst_W9_D15_R50_G180_B230.svg" alt="" id="burst1" />
+        </div>
+        <main>
+            <div class="mainContent">
+                <div class="divider"></div>
+                <h2 class="bigProjectTitle">Computer Friends</h2>
+                <div id="p5-container"></div>
+                <script src="computerFriends.js"></script>
+            </div>
+            <div class="divider"></div>
+            <div class="outSection">
+                <svg class="top-wave"
+                viewBox ="0 0 1000 100"
+                preserveAspectRatio="none"
+                aria-hidden="true">
+                <use href="/images/symbols.svg#wave" />
+                </svg>
+                <div class="showcase">
+                    <div class="divider"></div>
+                    <div class="describeProject">
+                        <h3 class="outSectionTitle">About Computer Friends</h3>
+                        <div class="projectDetails">
+                            <div class="articleImages">
+                                <img src="/images/computerFriends/computerFriendsScreenshot2.avif" alt="computer friends project image. A collection of green patterns float in a white void, with a bold hot pink pattern overlayed on top.">
+                            </div>
+                            <div class="projectDescription">
+                                <p>Computer Friends is an interactive art piece that generates collections of shapes called "friends"!</p>
+                                <p>The idea behind this project was to create a whimsical creature generator that creates unique digital beings, each with distinct attributes and personality.</p>
+                                <p>I was inspired by digital pets from games like Wobbledogs, where the random traits of digital dogs makes each one feel uniquely special and endearing. Another inspiration was Cary Huang's evolution simulations on Youtube, where abstract simulated creatures seemingly develop emergent storylines and personalities.</p>
+                                <p>I found it fascinating how storylines and genuine emotional connections could emerge from entities composed of just data and simple rules. With Computer Friends, I wanted to explore that same idea, and make people feel empathy for something as abstract and data-driven as a collection of shapes and patterns!</p>
+                                <p>A major visual inspiration for the project were barn quilts. These are traditional American quilts displayed on barns, and feature vibrant colors and bold geometric designs. I've always loved the distinct geometric look of quilts, and it's a medium I'd love to explore further some day.</p>
+                            </div>
+                        </div>
+                        <div class="projectDetails">
+                            <div class="projectDescription">
+                                <p>I began development reusing code I had developed to generate shapes in a grid. I had made it expandable and modular for easy integration into future projects.</p>
+                                <p>I created a simple generator that made entirely random patterns. However, pure randomness often didn't look very appealing and had very little character. The next step would be to refine the randomness.</p>
+                                <p>I decided that these friends needed some kind of focus point, almost like a face! I gave each friend a simple and bold main pattern that sits on top. This gives the viewer something to focus on. I then added some random chances for certain modifications. Some patterns might be all circles or all squares. Some may be dense, sparse, or even striped! These adjustments gave each friends far more personality. They all still felt random, but not uniform.</p>
+                                <p>This project was displayed at the December 2025 Open Studios at the Johnny Carson Center for Emerging Media Arts. I observed as people generated new Computer Friends and reacted to each one! Some were mesmerized by certain color schemes, while others found the ones with chaotic movements and odd shapes to be funny. The mix of reactions was just what I had wanted to hear. It brought me so much joy to see others interacting with my work!</p>
+                            </div>
+                            <div class="articleImages">
+                                <div class="halfImageContainer">
+                                    <img src="/images/computerFriends/experiment.avif" alt="An early test from before Computer Friends that used the same shape generation system to create grids of shapes and apply glowing effects to them.">
+                                    <img src="/images/computerFriends/barnQuilts.avif" alt="An early test from before Computer Friends that used the same shape generation system to create grids of shapes and apply glowing effects to them.">
+                                </div>
+                                <img src="/images/computerFriends/compFriendsIrl.avif" alt="A photo of me next to a television screen displaying a computer friend. Taken at the Johnny Carson Center for Emerging Media Arts during the 2025 Open Studios.">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <svg class="bottom-wave"
+                viewBox ="0 0 1000 100"
+                preserveAspectRatio="none"
+                aria-hidden="true">
+                <use href="/images/symbols.svg#waveU" />
+                </svg>
+            </div>
+        </main>
+        <footer class="footer">
+            <svg class="footer-wave"
+            viewBox ="0 0 1000 100"
+            preserveAspectRatio="none"
+            aria-hidden="true">
+            <use href="/images/symbols.svg#wave" />
+            </svg>
+            <div class="footer-content">
+                <img src="/images/shapes1.svg" alt="" class="footerShapes" aria-hidden="true">
+                <div class="contactObject">
+                    <h2 id="contactHeader">Contact Me</h2>
+                    <div class="contactInfo">
+                        <p><i class="fa-regular fa-envelope"></i> Email:<a href='mailto&#58;%63o%&#54;&#69;&#116;act&#64;%&#54;1she&#114;la&#104;m&#37;&#50;E%&#54;&#51;&#111;&#109;'>&#99;onta&#99;&#116;&#64;a&#115;&#104;erlahm&#46;c&#111;m</a></p>
+                        <p><i class="fa-brands fa-github"></i> GitHub: <a href="https://github.com/Asher-Lahm">https://github.com/Asher-Lahm</a></p>
+                        <p><i class="fa-brands fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/asher-lahm-b250902b3/">https://www.linkedin.com/in/asher-lahm-b250902b3/</a></p>
+                    </div>
+                    <p class="bottomText">This website was made by a human! Hello there!</p>
+                </div>
+                <img src="/images/shapes2.svg" alt="" class="footerShapes" aria-hidden="true">
+            </div>
+        </footer>
+    </body>
+</html>
